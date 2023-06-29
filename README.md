@@ -1,2 +1,2 @@
 # app-platform-example
-for test
+trigger
