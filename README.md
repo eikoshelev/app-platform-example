@@ -1,2 +1,1 @@
 # app-platform-example
-test
