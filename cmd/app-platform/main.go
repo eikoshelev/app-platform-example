@@ -6,15 +6,16 @@ import (
 	"net/http"
 )
 
-func main() {
-	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
-		_, err := fmt.Fprint(w, "hello from app")
-		if err != nil {
-			log.Fatalf("error printing message to response writer %s", err.Error())
-			return
-		}
-	})
+var counter = 0
 
-	log.Printf("listening on port :8080")
+func main() {
+	http.HandleFunc("/ping", handler)
+	log.Print("App Platform test app")
 	log.Fatal(http.ListenAndServe(":8080", nil))
+}
+
+func handler(w http.ResponseWriter, req *http.Request) {
+	fmt.Fprintf(w, "response count: %d", counter)
+	log.Printf("count: %d", counter)
+	counter++
 }
