@@ -1,0 +1,3 @@
+services:
+  my-app:
+    build: https://github.com/eikoshelev/app-platform-example.git
